@@ -8,14 +8,17 @@ function handleClick(_event) {
   return /* () */0;
 }
 
-function Component1(Props) {
-  var message = Props.message;
+function ItemInput(Props) {
   return React.createElement("div", {
-              onClick: handleClick
-            }, message);
+              className: "item-input"
+            }, React.createElement("input", {
+                  className: "item-input__input"
+                }), React.createElement("div", {
+                  onClick: handleClick
+                }));
 }
 
-var make = Component1;
+var make = ItemInput;
 
 exports.handleClick = handleClick;
 exports.make = make;

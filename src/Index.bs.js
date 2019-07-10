@@ -3,15 +3,16 @@
 
 var React = require("react");
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
-var Component1$ReactHooksTemplate = require("./Component1.bs.js");
+var ItemInput$ReactHooksTemplate = require("./ItemInput.bs.js");
 var Component2$ReactHooksTemplate = require("./Component2.bs.js");
 
-ReactDOMRe.renderToElementWithId(React.createElement(Component1$ReactHooksTemplate.make, {
-          message: "Hello! Click this text."
-        }), "index1");
+var items = /* array */[];
+
+ReactDOMRe.renderToElementWithId(React.createElement(ItemInput$ReactHooksTemplate.make, { }), "item-input");
 
 ReactDOMRe.renderToElementWithId(React.createElement(Component2$ReactHooksTemplate.make, {
           greeting: "Hello!"
         }), "index2");
 
+exports.items = items;
 /*  Not a pure module */
