@@ -1,6 +1,6 @@
 
-let initialList = [||];
+let initialList: ShoppingList.t = {
+    items: [||]
+};
 
-ReactDOMRe.renderToElementWithId(<ItemInput />, "item-input");
-
-ReactDOMRe.renderToElementWithId(<ShoppingList greeting=initialList />, "shopping-list");
+ReactDOMRe.renderToElementWithId(<ShoppingList shoppingList=initialList />, "shopping-list");

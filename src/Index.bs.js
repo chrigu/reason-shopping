@@ -3,16 +3,13 @@
 
 var React = require("react");
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
-var ItemInput$ReactHooksTemplate = require("./ItemInput.bs.js");
-var Component2$ReactHooksTemplate = require("./Component2.bs.js");
+var ShoppingList$ReactHooksTemplate = require("./ShoppingList.bs.js");
 
-var items = /* array */[];
+var initialList = /* record */[/* items : array */[]];
 
-ReactDOMRe.renderToElementWithId(React.createElement(ItemInput$ReactHooksTemplate.make, { }), "item-input");
+ReactDOMRe.renderToElementWithId(React.createElement(ShoppingList$ReactHooksTemplate.make, {
+          shoppingList: initialList
+        }), "shopping-list");
 
-ReactDOMRe.renderToElementWithId(React.createElement(Component2$ReactHooksTemplate.make, {
-          greeting: "Hello!"
-        }), "index2");
-
-exports.items = items;
+exports.initialList = initialList;
 /*  Not a pure module */
