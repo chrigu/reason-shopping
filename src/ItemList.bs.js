@@ -16,7 +16,7 @@ function ItemList(Props) {
   console.log(items);
   return React.createElement("div", {
               className: "item-list"
-            });
+            }, items);
 }
 
 var make = ItemList;

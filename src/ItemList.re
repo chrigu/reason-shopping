@@ -34,7 +34,7 @@ let make = (~itemList) => {
     Js.log(items);
 
     <div className="item-list">
-
+        (ReasonReact.array(items))
     </div>
 
 };
