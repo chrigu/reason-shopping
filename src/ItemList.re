@@ -1,3 +1,4 @@
+ let str = React.string;
 
 [@react.component]
 let make = (~itemList) => {
@@ -22,6 +23,19 @@ let make = (~itemList) => {
 //     </button>
 //     {state.show ? ReasonReact.string(greeting) : ReasonReact.null}
 //   </div>;
+
+    // let items = itemList.map(item => {
+
+    // });
+    let items = Belt_Array.map(itemList, item => {
+        <div>(str(item))</div>
+    });
+
+    Js.log(items);
+
+    <div className="item-list">
+
+    </div>
 
 };
 

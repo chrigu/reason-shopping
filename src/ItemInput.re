@@ -27,7 +27,7 @@ let initialInput = {input: ""};
      Component1.makeProps(~message="hello", ())
    )` */
 [@react.component]
-let make = () => {
+let make = (~submitItem) => {
   let (state, dispatch) =
     React.useReducer(
       (state, action) =>
@@ -39,19 +39,29 @@ let make = () => {
       initialInput,
     );
 
-let onChange = _evt => {
-    Js.log(ReactEvent.Form.target(_evt)##value);
-    dispatch(UpdateInput(ReactEvent.Form.target(_evt)##value));
+  let onChange = _evt => {
+      Js.log(ReactEvent.Form.target(_evt)##value);
+      dispatch(UpdateInput(ReactEvent.Form.target(_evt)##value));
+    };
+
+  let addItem = () => {
+      Js.log("submit");
+      submitItem(state.input)
+      dispatch(ResetInput);
   };
 
-<div className="item-input">
-  <input className="item-input__input" 
-         placeholder="Enter an item"
-         value=state.input
-         onChange={onChange}/>
-  <button className="item-input__reset" 
-          onClick={_ => dispatch(ResetInput)}>
-          (str("Reset"))
-  </button>
-</div>
+  <div className="item-input">
+    <input className="item-input__input" 
+          placeholder="Enter an item"
+          value=state.input
+          onChange={onChange}/>
+    <button className="item-input__reset" 
+            onClick={_ => dispatch(ResetInput)}>
+            (str("Reset"))
+    </button>
+    <button className="item-input__add" 
+            onClick={_ => addItem()}>
+            (str("Add"))
+    </button>
+  </div>
 };

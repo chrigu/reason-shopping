@@ -8,7 +8,7 @@ var ShoppingList$ReactHooksTemplate = require("./ShoppingList.bs.js");
 var initialList = /* record */[/* items : array */[]];
 
 ReactDOMRe.renderToElementWithId(React.createElement(ShoppingList$ReactHooksTemplate.make, {
-          shoppingList: initialList
+          initialList: initialList[/* items */0]
         }), "shopping-list");
 
 exports.initialList = initialList;
