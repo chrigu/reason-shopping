@@ -12,7 +12,7 @@ function ItemList(Props) {
   var itemList = Props.itemList;
   var items = Belt_Array.mapWithIndex(itemList, (function (index, item) {
           return React.createElement("li", {
-                      key: "(index.toString())"
+                      key: String(index)
                     }, item);
         }));
   console.log(items);
