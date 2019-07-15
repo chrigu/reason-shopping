@@ -10,13 +10,15 @@ function str(prim) {
 
 function ItemList(Props) {
   var itemList = Props.itemList;
-  var items = Belt_Array.map(itemList, (function (item) {
-          return React.createElement("div", undefined, item);
+  var items = Belt_Array.mapWithIndex(itemList, (function (index, item) {
+          return React.createElement("li", {
+                      key: "(index.toString())"
+                    }, item);
         }));
   console.log(items);
   return React.createElement("div", {
               className: "item-list"
-            }, items);
+            }, React.createElement("ul", undefined, items));
 }
 
 var make = ItemList;

@@ -27,14 +27,16 @@ let make = (~itemList) => {
     // let items = itemList.map(item => {
 
     // });
-    let items = Belt_Array.map(itemList, item => {
-        <div>(str(item))</div>
+    let items = Belt_Array.mapWithIndex(itemList, (index, item) => {
+        <li key="(index.toString())">(str(item))</li>
     });
 
     Js.log(items);
 
     <div className="item-list">
-        (ReasonReact.array(items))
+        <ul>
+            (ReasonReact.array(items))
+        </ul>
     </div>
 
 };
